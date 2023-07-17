@@ -34,7 +34,7 @@ extraDeploy: []
 ## @section Admission controller parameters
 
 admissionController:
-## @param admissionController.enabled Enable the component
+  ## @param admissionController.enabled Enable the component
   enabled: true
 
   ## @param admissionController.replicaCount Number of replicas
@@ -96,7 +96,8 @@ admissionController:
   # priorityClassName : high-priority
 
   ## @param admissionController.securityContext Container security context
-  securityContext: {}
+  securityContext:
+    {}
     # capabilities:
     #   drop:
     #   - ALL
@@ -184,7 +185,8 @@ admissionController:
       https: 443
 
   ## @param admissionController.resources CPU/Memory resource requests/limits
-  resources: {}
+  resources:
+    {}
     # limits:
     #   cpu: 200m
     #   memory: 512Mi
@@ -211,7 +213,8 @@ admissionController:
     # webhook-timeout-seconds: 30
 
   ## @param admissionController.extraEnvVars Additional container environment variables
-  extraEnvVars: []
+  extraEnvVars:
+    []
     # - name: MY-NAME
     #   value: "MY-VALUE"
 
@@ -220,6 +223,11 @@ admissionController:
 
   ## @param admissionController.extraEnvVarsSecret Name of existing Secret containing additional container environment variables
   extraEnvVarsSecret:
+
+  # Whether to use hostNetwork
+  hostNetwork:
+
+  dnsPolicy: ClusterFirst
 
   metrics:
     service:
@@ -284,7 +292,7 @@ admissionController:
 ## @section Recommender parameters
 
 recommender:
-## @param recommender.replicaCount Number of replicas
+  ## @param recommender.replicaCount Number of replicas
   replicaCount: 1
 
   image:
@@ -343,7 +351,8 @@ recommender:
   # priorityClassName : high-priority
 
   ## @param recommender.securityContext Container security context
-  securityContext: {}
+  securityContext:
+    {}
     # capabilities:
     #   drop:
     #   - ALL
@@ -413,7 +422,8 @@ recommender:
     successThreshold: 1
 
   ## @param recommender.resources CPU/Memory resource requests/limits
-  resources: {}
+  resources:
+    {}
     # limits:
     #   cpu: 200m
     #   memory: 1024Mi
@@ -469,7 +479,8 @@ recommender:
     # vpa-object-namespace: ""
 
   ## @param recommender.extraEnvVars Additional container environment variables
-  extraEnvVars: []
+  extraEnvVars:
+    []
     # - name: MY-NAME
     #   value: "MY-VALUE"
 
@@ -529,7 +540,7 @@ recommender:
 ## @section Updater parameters
 
 updater:
-## @param updater.enabled Enable the component
+  ## @param updater.enabled Enable the component
   enabled: true
 
   ## @param updater.replicaCount Number of replicas
@@ -591,7 +602,8 @@ updater:
   # priorityClassName : high-priority
 
   ## @param updater.securityContext Container security context
-  securityContext: {}
+  securityContext:
+    {}
     # capabilities:
     #   drop:
     #   - ALL
@@ -661,7 +673,8 @@ updater:
     successThreshold: 1
 
   ## @param updater.resources CPU/Memory resource requests/limits
-  resources: {}
+  resources:
+    {}
     # limits:
     #   cpu: 200m
     #   memory: 1024Mi
@@ -696,7 +709,8 @@ updater:
     # vpa-object-namespace: ""
 
   ## @param updater.extraEnvVars Additional container environment variables
-  extraEnvVars: []
+  extraEnvVars:
+    []
     # - name: MY-NAME
     #   value: "MY-VALUE"
 

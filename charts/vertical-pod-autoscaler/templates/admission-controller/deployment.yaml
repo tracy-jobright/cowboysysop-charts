@@ -43,6 +43,12 @@ spec:
       priorityClassName: {{ .Values.admissionController.priorityClassName | quote }}
       {{- end }}
       serviceAccountName: {{ include "vertical-pod-autoscaler.admissionController.serviceAccountName" . }}
+
+      {{- if .Values.admissionController.hostNetwork }}
+      hostNetwork: {{ .Values.admissionController.hostNetwork }}
+      {{- end }}
+      dnsPolicy: {{ .Values.admissionController.dnsPolicy }}
+
       securityContext:
         {{- toYaml .Values.admissionController.podSecurityContext | nindent 8 }}
       containers:
