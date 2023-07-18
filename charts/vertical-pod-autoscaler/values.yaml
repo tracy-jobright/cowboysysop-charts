@@ -770,6 +770,7 @@ updater:
 ## @section CRDs parameters
 
 crds:
+  enabled: false
   image:
     ## @param crds.image.registry Image registry
     registry: docker.io
@@ -801,6 +802,7 @@ crds:
 ## @section Tests parameters
 
 tests:
+  enabled: false
   image:
     ## @param tests.image.registry Image registry
     registry: ghcr.io
